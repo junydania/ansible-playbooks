@@ -1,0 +1,10 @@
+--- # USER MODULE
+
+- hosts: apacheweb,appserver
+  user: test
+  sudo: yes
+  gather_facts: no
+  connection: ssh
+  tasks:
+    - name: Add the user called tsapache to the apache web client
+      user: name=tsapache2 state=absent remove=yes
