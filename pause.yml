@@ -1,0 +1,13 @@
+--- # The Pause MOdule
+- hosts: apacheweb
+  sudo: yes
+  gather_facts: no
+  tasks:
+  - name: Install HTTPD
+    action: yum name=httpd state=installed
+  - name: Pausing
+    pause:
+      prompt: "Make sure the installation is complete..."
+  - name: Verify Lynx Installation 
+    action: yum name=lynx state=present
+    
