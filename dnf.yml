@@ -1,0 +1,11 @@
+--- # DNF Module Example
+
+- hosts: apacheweb
+  user: test
+  sudo: test
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: INstalling Apache Web Server with DNF
+      dnf: name=httpd state=latest
+  
